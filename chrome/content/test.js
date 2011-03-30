@@ -8,10 +8,7 @@
     var obj_TargetFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
 
 function downloadFile(httpLoc) {
-
-	var email = prompt("Please enter email address", "john@example.com");
-	
-	if (name!=null && name!="") { 
+ 
 		// download the zip file
 		try {
 			//new obj_URI object, adds the email address as parameter to the URI
@@ -64,8 +61,8 @@ function downloadFile(httpLoc) {
 			obj_Persist.saveURI(obj_URI,null,null,null,null,obj_TargetFile);
 	} catch (e) {
 		alert(e);
-	  }
 	}
+
 }
 
 function unzipFile(){
@@ -95,8 +92,12 @@ function unzipFile(){
 
 var hello = {
 	click: function() {
+	var email = prompt("Please enter email address", "john@example.com");
+	
+	if (name!=null && name!="") {
 		downloadFile("http://pse2.iam.unibe.ch/profiles/profile.zip");
-  	},
+	}  	
+	},
 };
 
  
